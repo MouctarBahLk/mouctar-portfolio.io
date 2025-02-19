@@ -1,0 +1,138 @@
+body {
+    margin: 0;
+  }
+  
+  main {
+    height: 1015px;
+    background: url("/assets/images/contact.jpg");
+    background-position: center;
+    background-size: cover;
+  }
+  
+  main > div {
+    position: relative;
+    top: 90px;
+    padding: 0.5rem;
+    border-radius: 5px;
+  }
+  
+  main.hide {
+    display: none;
+  }
+  
+  footer.hide {
+    display: none;
+  }
+  main > div.change-top {
+    top: 250px !important ;
+  }
+  
+  main.change-height {
+    height: 1040px !important;
+  }
+  
+  section:last-child p {
+    margin-bottom: 3rem;
+  }
+  
+  /* Pour pc & tab */
+  main li {
+    display: none;
+  }
+  
+  div p:last-child {
+    font-weight: bold;
+  }
+  
+  i {
+    font-size: 1.17rem;
+  }
+  
+  /* Pour pc & tabl */
+  section:first-child {
+    display: none;
+  }
+  
+  section:last-child {
+    background-color: rgba(255, 255, 255, 0.957);
+    backdrop-filter: blur(3px);
+  
+    padding: 2rem;
+    font-family: "Roboto", sans-serif;
+    border-radius: 5px;
+  
+    /* Seulement en mode mobile*/
+    height: 820px;
+    box-shadow: 2px 0 3px black;
+    width: 70%;
+    margin: 25px auto;
+  }
+  
+  label {
+    margin-bottom: 0.2rem;
+    display: block;
+  }
+  
+ 
+  
+  /* Tablette */
+  @media all and (min-width: 742px) {
+    main {
+      height: 1050px;
+    }
+  
+    main > div {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      margin: auto 100px;
+      padding: 0;
+      top: 220px;
+    }
+  
+    section:first-child {
+      display: block;
+      background-color: rgba(0, 123, 255, 0.5);
+      backdrop-filter: blur(5px);
+      padding: 0 0.8rem;
+      border-radius: 5px 0 0 5px;
+      color: rgb(255, 247, 231);
+    }
+  
+    section:last-child {
+      width: auto;
+      padding: 15px 3rem;
+      margin: 0 auto; 
+      border-radius: 0 6px 6px 0;
+    }
+  
+    main li {
+      display: grid;
+      grid-template-columns: 30px 1fr;
+      align-items: baseline;
+    }
+  
+    form div ~ small {
+      top: 725px;
+    }
+  }
+  
+  /* Pcs */
+  @media all and (min-width: 1140px) {
+    main > div {
+      width: 70%;
+      margin: auto; 
+      justify-content: center;
+      grid-gap: 0;
+    }
+  
+    section:last-child {
+      padding: 0 3rem;
+  
+      box-sizing: border-box; 
+      width: 100%;
+    }
+  
+    form div ~ small {
+      top: 690px;
+    }
+  }

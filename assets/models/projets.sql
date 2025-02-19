@@ -1,0 +1,1 @@
+SELECT * FROM projets ORDER BY titre

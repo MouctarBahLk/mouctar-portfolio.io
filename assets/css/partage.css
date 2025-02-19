@@ -1,0 +1,312 @@
+@import url("./keyframe.css");
+
+body {
+  font-family: "Quicksand", sans-serif;
+  margin: 0;
+}
+
+body.scrollOff {
+  overflow-y: hidden;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  box-sizing: border-box; /* Pour ne pas dépasser la limite à gauche */
+  position: fixed;
+  background-color: rgb(0, 77, 153);
+  backdrop-filter: blur(25px);
+  z-index: 1;
+}
+
+/* Pour les liens dans la barre de navigation */
+ul {
+  list-style: none;
+}
+
+header ul {
+  padding: 0;
+  margin: 0;
+}
+
+/* Pour le logo */
+header > a {
+  padding: 10px;
+  font-family: "Oleo Script", sans-serif;
+  color: white;
+  font-size: 25px;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 2px rgba(66, 233, 15, 0.442);
+  text-decoration: none;
+}
+
+header ul {
+  display: flex;
+}
+
+i {
+  font-size: 24px;
+}
+
+/* Hamburger MENU */
+header div {
+  cursor: pointer;
+}
+
+/* bar */
+header div span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  transition: all 0.3s ease-in-out;
+  background-color: white;
+}
+
+header div.active span:nth-child(2) {
+  opacity: 0;
+}
+
+header div.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+header div.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Style pour la barre de navigation en mode mobile et tablette */
+@media all and (max-width: 742px), (min-width: 743px) and (max-width: 1140px) {
+  /* Nav-menu non visible par défaut */
+  header ul {
+    display: none;
+    position: fixed;
+    left: -100%;
+    top: 84px;
+    gap: 0;
+    flex-direction: column;
+    background-color: #007acc;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    height: 100vh;
+  }
+
+  header ul.active {
+    display: flex;
+  }
+
+  header ul li {
+    display: flex !important;
+    align-items: center;
+    margin-left: 25%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  nav li:last-child {
+    margin-top: 30px;
+    margin-left: 33%;
+  }
+
+  /* Affichage de la barre de navigation lorsqu'on clique sur le bouton hamburger */
+  header ul.active {
+    left: 0;
+  }
+}
+
+/* Style pour les options du sélecteur */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background: #5c6664;
+  background-image: none;
+  flex: 1;
+  padding: 0 0.5em;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1em;
+  font-family: "Open Sans", sans-serif;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+nav li:last-child {
+  position: relative;
+  display: flex;
+  width: 8em;
+  height: 2em;
+  line-height: 3;
+  background: #5c6664;
+  overflow: hidden;
+  border-radius: 0.25em;
+}
+
+nav li:last-child::after {
+  content: "\25BC";
+  position: absolute;
+  top: -4px;
+  right: 0;
+  padding: 0 1em;
+  background: #2b2e2e;
+  cursor: pointer;
+  pointer-events: none;
+  transition: 0.25s all ease;
+}
+
+.select:hover::after {
+  color: white;
+}
+
+header li {
+  margin-left: 20px;
+}
+
+header li a {
+  color: white;
+  text-decoration: none;
+  font-size: 25px;
+  padding: 12px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+}
+
+header li a:hover {
+  color: #000000;
+  background-color: #ffffffb3;
+}
+
+/* Pour le pied de la page */
+/* le footer qui suit le main */
+main + footer {
+  background-color: rgb(0, 77, 153);
+  padding: 36px;
+}
+
+main + footer ul {
+  display: flex;
+  justify-content: center;
+}
+
+main + footer li {
+  width: 50px;
+  height: 50px;
+  margin: 0 20px;
+}
+
+main + footer img {
+  width: 100%;
+  height: 100%;
+}
+
+nav i {
+  margin-right: 15px;
+}
+
+.form-group {
+  margin: 40% auto 20%;
+}
+
+.form-group a {
+  background-color: black;
+  padding: 12px;
+  border-radius: 5px;
+  color: white;
+  text-decoration: underline;
+  text-decoration: none;
+}
+
+.form-group a:hover {
+  background-color: rgb(19, 1, 1);
+  color: rgb(241, 210, 210);
+}
+
+/* Tablette et ordinateur */
+@media all and (min-width: 742px) {
+  /* Hamburger non visible en mode tablette et ordinateur */
+  header div {
+    display: none;
+  }
+
+  header {
+    padding: 15px 60px;
+  }
+
+  header > a {
+    font-size: 40px;
+  }
+
+  header ul {
+    display: flex;
+  }
+
+  header nav i {
+    display: none;
+  }
+
+  .form-group {
+    margin: 20% auto 10%;
+  }
+
+  /* Footer en mode tablette et ordinateur */
+  main + footer li {
+    width: 80px;
+    height: 80px;
+    margin: 0 50px;
+  }
+}
+
+/* Ordinateur */
+@media all and (min-width: 1140px) {
+  header {
+    padding: 15px 60px;
+  }
+
+  header > a {
+    font-size: 50px;
+  }
+
+  header li a {
+    padding: 10px;
+  }
+
+  header li a:hover {
+    background-color: black;
+    color: white;
+  }
+
+  header li {
+    padding: 0.2rem;
+    cursor: pointer;
+    color: #ebebeb;
+    min-width: 80px;
+    margin: auto;
+  }
+
+  header li:not(:last-child):hover {
+    background-size: 100% 100%;
+    color: #27262c;
+    animation: danse 300ms ease-out;
+  }
+
+  header > a:hover {
+    animation: danse 300ms ease-out;
+  }
+
+  header + li:active {
+    transform: translateY(4px);
+  }
+}

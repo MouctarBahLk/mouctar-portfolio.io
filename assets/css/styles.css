@@ -1,0 +1,795 @@
+
+@import url("./keyframe.css");
+@import url("./common.css");
+/* Style pour toutes les sections */
+section {
+    background-color: rgba(0, 37, 77, 0.8); /* Couleur de fond pour toutes les sections */
+    /* Espacement intérieur des sections */
+}
+
+    /* Style pour les écrans de taille moyenne et supérieure */
+    @media screen and (min-width: 768px) 
+    {
+      /* Style pour le conteneur principal */
+        #Accueil {
+        padding: 100px 50px; 
+        text-align: center; 
+        background-color: #f2f2f2; 
+        }
+
+      /* Style pour les images de fond */
+      .slide-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        opacity: 0;
+        transition: opacity 1s ease;
+      }
+
+      /* Style pour la première diapositive */
+      .slide-background:first-child {
+        opacity: 1;
+      }
+
+     /* Définition des images de fond pour ma page d'accueil*/
+      .slide-background:nth-child(1) {
+        background-image: url("/assets/images/back1.png");
+      }
+
+      .slide-background:nth-child(2) {
+        background-image: url("/assets/images/back2.png");
+      }
+
+      .slide-background:nth-child(3) {
+        background-image: url("/assets/images/back3.jpg");
+
+      }
+      .text-container {
+        position: absolute;
+        top: 50%; 
+        left: 50%;
+        transform: translate(-50%, -50%); 
+        z-index: 1;
+        background-color: rgba(255, 255, 255, 0.5); 
+        width: 80%;
+        height: 500px; 
+        padding: 20px; 
+        }
+
+    }
+
+    /* Style pour les petits écrans (mobiles) */
+    @media screen and (max-width: 767px) 
+    {
+                .text-container {
+            position: absolute;
+            top: 50%; 
+            left: 50%;
+            transform: translate(-50%, -50%); 
+            z-index: 1;
+            background-color: rgba(255, 255, 255, 0.5); 
+            width: 80%;
+            height: 500px; 
+            padding: 20px; 
+            }
+
+            /* Style pour le conteneur principal */
+            #Accueil {
+                padding: 50px 20px; 
+                margin-bottom: 0;
+            }
+            
+
+            /* Style pour les titres */
+            .bienvenue {
+                font-size: 28px; 
+                margin-bottom: 20px; 
+            }
+
+            /* Style pour le texte */
+            .text {
+                font-size: 18px; 
+                margin-bottom: 30px; 
+            }
+
+            /* Style pour le diaporama d'images */
+            .slideshow-container {
+                max-width: 100%; 
+                border-radius: 0; 
+                box-shadow: none; 
+            }
+        /* Style pour les images de fond */
+        .slide-background {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-size: cover;
+                background-position: center;
+                opacity: 0;
+                transition: opacity 1s ease;
+            }
+
+            /* Style pour la première diapositive */
+            .slide-background:first-child {
+                opacity: 1;
+            }
+
+            /* Définition des images de fond pour ma page d'accueil*/
+            .slide-background:nth-child(1) {
+                background-image: url("/assets/images/back1.png");
+            }
+
+            .slide-background:nth-child(2) {
+                background-image: url("/assets/images/back2.png");
+            }
+
+            .slide-background:nth-child(3) {
+                background-image: url("/assets/images/back3.jpg");
+            }
+
+    }
+   
+/*----fin des media curie------*/
+
+    .text-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); 
+        z-index: 1;
+        background-color: rgba(255, 255, 255, 0.8); 
+        width: 70%;
+        height: auto; 
+        padding: 20px; 
+    }
+
+/* pour hamburger*/
+.menu-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.btn-line {
+  width: 100%;
+  height: 3px;
+  background-color: #66ccff;
+  transition: all 0.3s ease;
+}
+
+.menu-btn.active .btn-line:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.menu-btn.active .btn-line:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-btn.active .btn-line:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 37, 77, 0.9);
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  color: white;
+}
+
+.menu ul li {
+  margin: 10px;
+  color: white;
+}
+
+.menu ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+}
+
+@media screen and (max-width: 768px) 
+{
+    .menu {
+        background-color: rgba(0, 77, 153, 0.8);
+    }
+  .menu ul {
+      display: none;
+  }
+
+  .menu-btn {
+      display: flex;
+  }
+
+  .menu.active ul {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .button-container {
+  margin-top: 20px; 
+  display: flex; 
+  justify-content: center; 
+  flex-wrap: wrap; /* Permettre aux boutons de passer à la ligne si nécessaire */
+    }
+
+    .button-container button {
+  padding: 10px 20px; 
+  font-size: 16px; 
+  background-color: rgba(0, 123, 255, 0.5); 
+  color:white; 
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer; 
+  transition: background-color 0.3s; 
+  margin: 5px; 
+    }
+
+    .button-container button:hover {
+        background-color: rgba(0, 123, 255, 0.8); 
+    }
+
+    .button-container button:focus {
+    outline: none; 
+    }
+    
+    /*----Competences----*/
+
+    .competence {
+        flex-basis: calc(50% - 20px); 
+        margin: 15px;
+    }
+
+    /*----fin---*/
+    #Competences {
+    margin-top: 100px;
+    }
+
+}
+/* ------------- */
+/*------------header-----------*/
+
+
+    .menu {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px; 
+    }
+
+    .menu ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .menu ul li {
+      display: inline;
+      margin-right: 20px; 
+    }
+
+    .menu ul li:last-child {
+      margin-right: 0; 
+    }
+
+    .menu ul li a {
+      text-decoration: none;
+      color: rgba(255, 255, 255, 0.8); 
+      font-size: 16px; 
+    }
+
+    .mon-profil img {
+      width: 40px; 
+      height: 40px; 
+      border-radius: 50%; 
+      margin-right: 10px; 
+    }
+    .button-container {
+  margin-top: 20px; 
+}
+
+.button-container button {
+  padding: 10px 20px; 
+  font-size: 16px; 
+  background-color: rgba(0, 123, 255, 0.5); 
+  color: black; 
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer; 
+  transition: background-color 0.3s; 
+  margin-right: 10px; 
+}
+
+.button-container button:hover {
+    background-color: rgba(0, 123, 255, 0.8); 
+}
+
+.button-container button:focus {
+  outline: none; 
+}
+
+/*----Competences---*/
+#Competences {
+    padding: 10px;
+    background-color: #00284d; 
+    text-align: center;
+    justify-content: space-around;
+    
+    margin-top: 870px; 
+   
+}
+
+#Competences h2 {
+    color: white;
+    font-size: 36px;
+}
+#comp {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: rgba(0, 37, 77, 0.8); 
+    padding: 20px; 
+    margin-top: 0; 
+}
+
+.titre {
+font-size: 24px; /* Taille du titre */
+margin-bottom: 20px; /* Ajoute de l'espace en bas du titre */
+}
+.titre {
+    font-size: 24px;
+    color: #333;
+    
+}
+.competence-liste {
+padding: 0;
+list-style: none;
+list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.competence-item {
+margin-bottom: 2px; /* Ajoute de l'espace en bas de chaque item de compétence */
+margin: 10px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease; /* Transition de couleur au survol */
+    cursor: pointer;
+}
+
+.icone {
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.icone img {
+width: 50px; /* Ajustez la taille de l'icône */
+margin-right: 2px;
+}
+
+.texte {
+font-size: 18px; /* Taille du texte */
+}
+.competence {
+    flex: 1;
+    margin: 0 10px; 
+    max-width: 400px; 
+    text-align: center; 
+    background-color: #fff; 
+    border-radius: 8px;
+    padding: 20px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre portée */
+    margin-bottom: 30px;
+    background-color: #eef6fc; 
+    border-radius: 10px; 
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.competence img {
+    max-width: 100%;
+    border-radius: 50%; 
+}
+
+/* Media queries pour la mise en page responsive */
+@media only screen and (max-width: 768px) {
+    .competence {
+        flex-basis: calc(50% - 20px); 
+        margin: 10px;
+    }
+    #Competences {
+        padding: 10px;
+        margin-top: 765px; 
+    }
+    
+}
+@media only screen and (max-width: 480px) {
+    .competence {
+        flex-basis: calc(100% - 20px); 
+        margin: 10px;
+    }
+    #Competences {
+        
+        margin-top: 780px; 
+    }
+}
+
+
+
+
+/*---fin competence----*/
+/*--projet--*/
+
+/* Style de la section précédente */
+
+.magnifique-section1 {
+    text-align: center;
+    padding: 50px;
+    background-color: #00284d;
+   
+    font-family: 'Montserrat', sans-serif; 
+    color: #ffffff; 
+
+    /* Espacement et alignement */
+    line-height: 1.6;
+}
+.magnifique-section .contenu .div img {
+    max-width: 100%; /* Limite la largeur de l'image à 100% de la largeur du conteneur */
+    max-height: 100%; 
+    width: auto; 
+    height: auto; 
+    object-fit: contain; /* Redimensionne l'image pour qu'elle s'adapte au conteneur tout en conservant ses proportions */
+}
+
+.magnifique-section1 h2 {
+    font-size: 36px; 
+    font-weight: bold; 
+    margin-bottom: 20px; 
+}
+
+.container1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.div1 {
+    margin: 10px;
+    background-color: #eef6fc;
+    border-radius: 5px;
+    color:black;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 200px; 
+    flex: 1; 
+    cursor: pointer; 
+
+    /* Style de texte pour les div */
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+.div1 a {
+    text-decoration: none;
+    color: black;
+    padding: 10px 20px;
+    background-color: rgba(0, 123, 255, 0.5);
+    border-radius: 5px;
+    transition: background-color 0.5s ease;
+    display: inline-block;
+}
+
+.div1 a:hover {
+    background-color: rgba(0, 123, 255, 0.8); 
+}
+
+
+
+
+/* Media Queries */
+@media screen and (max-width: 767px) {
+    .div1 {
+        width: 100%; /* Afficher un div par ligne sur les petits écrans */
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .div1 {
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .div1 {
+        width: 33.33%; 
+    }
+
+    .div1 a {
+        margin-top: 10px; 
+    }
+}
+
+/*--fin--*/
+/*---Formations---*/
+
+/* Style pour la section */
+.magnifique-section {
+    position: relative;
+    overflow: hidden;
+    color: #ffffff; /* Couleur du texte */
+    text-align: center;
+    padding: 100px 0; /* Espace intérieur de la section */
+    
+}
+.description-pro {
+    height: 100px; /* Hauteur initiale du contenu à afficher */
+    overflow: hidden; /* Cache le contenu qui dépasse la hauteur spécifiée */
+    transition: height 0.3s ease; 
+}
+
+.description-pro.full-height {
+    height: auto; /* Hauteur auto pour afficher tout le contenu */
+}
+
+
+
+
+/* Style pour le titre */
+.magnifique-section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+/* Style pour les divs à l'intérieur de la section */
+.magnifique-section .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.magnifique-section .div {
+    margin: 10px;
+    background-color:  #007acc; 
+    border-radius: 10px;
+    padding: 20px;
+    transition: transform 0.3s ease;
+    flex: 1;
+}
+
+/* Style pour le hover */
+.magnifique-section .div:hover {
+    transform: scale(1.1);
+}
+
+
+/* Pour le titre de la liste des projets */
+#projects > h2 {
+    margin-top: 0;
+  }
+  
+  
+  
+  @keyframes loadingAnimation {
+    0% {
+      opacity: 0.2;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.2;
+    }
+  }
+  
+  #projects ul ~ button {
+    display: block;
+    animation: loadingAnimation 1.5s infinite;
+    color: rgb(246, 246, 216);
+    text-align: center;
+    font-weight: bold;
+    padding: 15px;
+    background-color: #201f04;
+    border: none;
+    border-radius: 15px;
+    margin: 0 auto;
+  }
+  #projects{
+    background-color: #00284d;
+  }
+  
+  #projects h2.pro {
+    font-size: 36px; 
+    color: #ffffff; 
+    
+}
+  
+  /* On selectionne le button "explore"*/
+  footer:last-child {
+    text-align: right;
+  }
+  
+  footer:last-child a {
+    color: white;
+    padding: 6px;
+    border-radius: 6px;
+  }
+  
+  footer:last-child a i {
+    font-size: 16px;
+    vertical-align: middle;
+  }
+  
+  footer:last-child a:hover {
+    color: white;
+    background-color: black;
+  }
+  
+
+
+/* Media queries pour les écrans plus petits */
+@media only screen and (max-width: 768px) {
+    .magnifique-section {
+        padding: 50px 0; /* Réduire l'espace intérieur de la section */
+    }
+    .magnifique-section h2 {
+        font-size: 24px; /* Réduire la taille du titre */
+    }
+    .magnifique-section .div {
+        flex-basis: calc(50% - 20px); /* Afficher les divs en deux colonnes */
+    }
+}
+
+/* Media queries pour les écrans encore plus petits (mobiles) */
+@media only screen and (max-width: 480px) {
+    .magnifique-section .div {
+        flex-basis: calc(100% - 20px); /* Afficher les divs en une seule colonne */
+    }
+}
+.magnifique-section {
+    position: relative;
+    overflow: hidden;
+    color: #ffffff; /* Couleur du texte */
+    text-align: center;
+    padding: 100px 0; /* Espace intérieur de la section */
+    background-color: rgba(0, 37, 77, 0.8); 
+    background-size: cover;
+    background-position: center; 
+}
+
+/* Media Queries */
+@media screen and (max-width: 767px) {
+    /* Pour les écrans de taille mobile */
+    .background-image {
+        height: auto;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    /* Pour les écrans de taille tablette */
+    .background-image {
+        height: auto;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    /* Pour les écrans de taille ordinateur */
+    .background-image {
+        height: 100%;
+    }
+}
+
+/*--Fin formation---*/
+/*--footer--*/
+
+footer {
+    background-color: rgba(0, 37, 77, 0.9);
+    color: #fff;
+    padding: 50px 0;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.footer-column {
+    flex: 1 1 300px; /* Ajustez la largeur des colonnes selon votre préférence */
+    margin-bottom: 20px; 
+}
+
+.footer-column h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer-column p {
+    font-size: 14px;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #fff;
+}
+
+.footer-bottom p {
+    font-size: 12px;
+    color: white;
+}
+
+/* Media queries pour les écrans de taille moyenne */
+@media screen and (max-width: 768px) {
+    .footer-container {
+        flex-direction: column; /* Affichez les colonnes les unes en dessous des autres */
+        align-items: center; 
+    }
+
+    .footer-column {
+        flex: 1 1 auto; /* Les colonnes s'adaptent à la largeur de l'écran */
+        margin-bottom: 30px; 
+        text-align: center;
+    }
+}
+
+/* Media queries pour les écrans de petite taille (mobiles) */
+@media screen and (max-width: 480px) {
+    .footer-column {
+        flex-basis: 100%;
+        margin-bottom: 20px; 
+    }
+}
+
+
+/*--fin footer--*/
+
+  
+
+
+   
+   
+
+ 
